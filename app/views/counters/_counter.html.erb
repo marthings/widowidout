@@ -1,0 +1,18 @@
+<div id="<%= dom_id counter %>" class="border border-gray-200 p-8 rounded-xl">
+  
+
+  <%= link_to edit_counter_path(counter) do %>
+    edit
+  <% end %>
+
+  <%= counter.emoji %>
+  
+  <h2 class="font-bold text-xl">
+    <%= counter.title %>
+  </h2>
+
+  <div class="font-black text-6xl">
+    <%= counter.amount %>
+  </div>
+
+</h2>
