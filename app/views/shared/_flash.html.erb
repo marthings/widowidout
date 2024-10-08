@@ -1,0 +1,19 @@
+<% flash.each do |flash_type, message| %>
+
+  <% if notice %>
+
+    <div class="text-center notice mb-6 items-center p-4 bg-green-200" role="alert" data-controller="removable" data-action="click->removable#remove">
+      <%= notice %>
+    </div>
+
+  <% end %>
+
+  <% if alert %>
+
+    <div class="text-center notice mb-6 items-center p-4 bg-red-200" role="alert" data-controller="removable" data-action="removable#remove">
+      <%= alert %>
+    </div>
+
+  <% end %>
+
+<% end %>

@@ -1,5 +1,5 @@
 class CountersController < ApplicationController
-  before_action :set_counter, only: %i[ edit update destroy ]
+  before_action :set_counter, only: %i[ increment decrement edit update destroy ]
 
   # GET /counters or /counters.json
   def index
@@ -15,6 +15,24 @@ class CountersController < ApplicationController
   def edit
   end
 
+  def increment
+    respond_to do |format|
+      if @counter.update(amount: @counter.amount + 1)
+        format.html { redirect_to counters_path }
+      end
+    end
+  end
+
+  def decrement
+    
+    respond_to do |format|
+      if @counter.update(amount: @counter.amount - 1)
+        format.html { redirect_to counters_path }
+      else
+        format.html { redirect_to counters_path, alert: "Cant go minus! Let´s go for a new try!" }
+      end
+    end
+  end
   # POST /counters or /counters.json
   def create
     @counter = Counter.new(counter_params)

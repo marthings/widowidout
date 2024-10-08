@@ -3,4 +3,5 @@
 
   <%= render "form", counter: @counter %>
 
+  <%= button_to "Delete", @counter, method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium", data: { turbo_confirm: "Are you sure you want to delete?" } %>
 </div>

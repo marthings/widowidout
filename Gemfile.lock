@@ -220,6 +220,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
+    rails_heroicon (2.3.0)
+      actionview
+      railties
     railties (8.0.0.beta1)
       actionpack (= 8.0.0.beta1)
       activesupport (= 8.0.0.beta1)
@@ -350,6 +353,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.0.beta1)
+  rails_heroicon
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable
