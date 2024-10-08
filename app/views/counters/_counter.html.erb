@@ -1,17 +1,16 @@
-<div id="<%= dom_id counter %>" class="border border-gray-200 p-8 rounded-xl">
+<div id="<%= dom_id counter %>" class="border border-gray-200 p-8 relative rounded-xl flex flex-col gap-4 items-center">
   
-
-  <%= link_to edit_counter_path(counter) do %>
-    edit
+  <%= link_to edit_counter_path(counter), class:"absolute top-4 right-4" do %>
+    <i data-feather="edit-3"></i>
   <% end %>
 
-  <%= counter.emoji %>
+  <div class="text-8xl"><%= counter.emoji %></div>
   
   <h2 class="font-bold text-xl">
     <%= counter.title %>
   </h2>
 
-  <div class="font-black text-6xl">
+  <div class="font-bold text-6xl">
     <%= counter.amount %>
   </div>
 

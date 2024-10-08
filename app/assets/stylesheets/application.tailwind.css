@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .form-input {
+    @apply block border border-gray-400 rounded-md outline-none px-3 py-2 w-full
+  }
+
+  .form-label {
+    @apply font-bold mb-2 block
+  }
+
+  .button-solid {
+    @apply py-3 px-5 rounded-lg bg-gray-900 text-white inline-block font-semibold cursor-pointer
+  }
+
+  .button-soft {
+    @apply py-3 px-5 rounded-lg bg-gray-200 inline-block font-semibold cursor-pointer
+  }
+
+  .button-link {
+    @apply pb-1 border-b-2 border-gray-900 inline-block font-semibold cursor-pointer
   }
 }
 
-*/
+

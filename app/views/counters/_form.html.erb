@@ -12,30 +12,30 @@
   <% end %>
 
   <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-input" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :emoji %>
-    <div data-controller="emoji-picker">
-      <input type="button" role="button" popovertarget="select-emoji" value="test">
+    <%= form.label :emoji, class: "form-label" %>
+    <div class="flex items-center gap-2" data-controller="emoji-picker">
+      
       <div popover id="select-emoji" class="select-emoji" data-emoji-picker-target="popover">
-      test
         <emoji-picker data-emoji-picker-target="picker"></emoji-picker>
       </div>
       
-      <%= form.text_field :emoji, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", data: { emoji_picker_target: "input" } %>
+      <%= form.text_field :emoji, style: "field-sizing: content", class: "flex text-8xl rounded-md border-0 border-gray-400 outline-none px-3 py-2 mt-2", data: { emoji_picker_target: "input" } %>
+      <input type="button" role="button" class="button-soft" popovertarget="select-emoji" value="Select emoji">
     </div>
   </div>
 
 
   <div class="my-5">
-    <%= form.label :amount %>
-    <%= form.number_field :amount, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :amount, "Starting amount", class: "form-label" %>
+    <%= form.number_field :amount, class: "form-input" %>
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "button-solid" %>
   </div>
 <% end %>
