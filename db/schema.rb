@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_07_171135) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_08_194300) do
   create_table "counters", force: :cascade do |t|
     t.string "title"
     t.string "emoji"
     t.integer "amount", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color", default: "#ffffff"
   end
 end

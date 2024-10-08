@@ -6,7 +6,7 @@
 
 @layer components {
 .form-input {
-    @apply block border border-gray-400 rounded-md outline-none px-3 py-2 w-full
+    @apply block border-b border-gray-300 rounded-md outline-none px-3 py-2 w-full
   }
 
   .form-label {
@@ -14,11 +14,11 @@
   }
 
   .button-solid {
-    @apply py-3 px-5 rounded-lg bg-gray-900 text-white inline-block font-semibold cursor-pointer
+    @apply py-3 px-5 rounded-full bg-gray-900 text-white inline-block font-semibold cursor-pointer
   }
 
   .button-soft {
-    @apply py-3 px-5 rounded-lg bg-gray-200 inline-block font-semibold cursor-pointer
+    @apply py-3 px-5 rounded-full bg-gray-200 inline-block font-semibold cursor-pointer
   }
 
   .button-link {

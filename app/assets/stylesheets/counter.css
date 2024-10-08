@@ -1,0 +1,13 @@
+.counter-card {
+  background: hsl(from var(--color) h s 90%);
+  color: hsl(from var(--color) h s 20%);
+}
+
+.counter-decrement-button {
+  background: hsl(from var(--color) h s 70%);
+}
+
+.counter-increment-button {
+  background: hsl(from var(--color) h s 30%);
+  color: hsl(from var(--color) h s 20%);
+}

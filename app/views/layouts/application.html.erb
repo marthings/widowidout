@@ -38,7 +38,11 @@
 
   <body>
     <%= render "shared/flash" %>
-    <main class="container mx-auto mt-28 px-5">
+    <header class="flex justify-between items-center mb-2 p-4">
+      <h1 class="font-bold text-4xl"><%= link_to root_url do %>Widowidout<% end %></h1>
+      <%= link_to "Create a counter", new_counter_path, class: "button-solid" %>
+    </header>
+    <main class="container mx-auto mt-12 p-5">
       <%= yield %>
     </main>
   </body>

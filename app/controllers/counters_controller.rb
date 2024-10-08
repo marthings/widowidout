@@ -79,6 +79,6 @@ class CountersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def counter_params
-      params.expect(counter: [ :title, :emoji, :amount ])
+      params.expect(counter: [ :title, :emoji, :amount, :color ])
     end
 end
