@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_10_08_194300) do
+ActiveRecord::Schema[8.0].define(version: 2024_10_08_201238) do
   create_table "counters", force: :cascade do |t|
     t.string "title"
     t.string "emoji"
@@ -18,5 +18,6 @@ ActiveRecord::Schema[8.0].define(version: 2024_10_08_194300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "color", default: "#ffffff"
+    t.integer "goal", default: 0
   end
 end
