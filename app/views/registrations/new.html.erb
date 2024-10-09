@@ -1,4 +1,4 @@
-<div class="mx-auto md:w-2/3 w-full border border-gray-300 rounded-xl p-8">
+<div class="mx-auto md:w-2/3 bg-white max-w-[480px] w-full rounded-xl p-8">
 
   <h1 class="font-bold text-4xl">Sign up</h1>
 
@@ -19,6 +19,10 @@
       <div class="mt-4 text-sm text-gray-500 sm:mt-0">
         <%= link_to "Forgot password?", new_password_path, class: "text-gray-700 underline" %>
       </div>
+    </div>
+
+    <div class="mt-4 text-gray-500">
+      <%= link_to "Got account? Log in", new_session_path, class: "text-gray-700 underline" %>
     </div>
   <% end %>
 </div>

@@ -36,27 +36,32 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
   </head>
 
-  <body class="body">
+  <body class="body <%= authenticated? ? "page" : "landing-page" %>">
     <%= render "shared/flash" %>
+
     <header class="flex justify-between items-center mb-2 p-4">
+
       <h1 class="font-bold text-4xl"><%= link_to root_url do %>Widowidout<% end %></h1>
       
-      <div class="flex items-center gap-4">
       <% if authenticated? %>
-        <div class="flex gap-2 rounded-full bg-gray-200 p-2 pl-5 items-center">
-          <%= Current.user.email_address %>
-          <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+
+        <div class="flex items-center gap-4">
+        
+          <div class="flex gap-2 rounded-full bg-gray-200 p-2 pl-5 items-center">
+            <%= Current.user.email_address %>
+            <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+          </div>
+          <%= link_to "Create a counter", new_counter_path, class: "button-solid" %>
         </div>
-        <%= link_to "Create a counter", new_counter_path, class: "button-solid" %>
-        
-      <% else %>
-        
+
       <% end %>
-      </div>
 
     </header>
     
     <main class="container mx-auto mt-12 p-5">
+      <% if !authenticated? %>
+        <h1 class="text-6xl font-bold text-center mx-auto mb-12 max-w-[480px]">Track milestones that matter</h1>
+      <% end %>
       <%= yield %>
     </main>
   </body>
