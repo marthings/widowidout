@@ -3,7 +3,8 @@ class CountersController < ApplicationController
 
   # GET /counters or /counters.json
   def index
-    @counters = Counter.all
+    @user = Current.user
+    @counters = @user.counters.all
   end
 
   # GET /counters/new
@@ -24,7 +25,6 @@ class CountersController < ApplicationController
   end
 
   def decrement
-    
     respond_to do |format|
       if @counter.update(amount: @counter.amount - 1)
         format.html { redirect_to counters_path }
@@ -35,7 +35,8 @@ class CountersController < ApplicationController
   end
   # POST /counters or /counters.json
   def create
-    @counter = Counter.new(counter_params)
+    @user = Current.user
+    @counter = @user.counters.build(counter_params)
 
     respond_to do |format|
       if @counter.save
@@ -79,6 +80,6 @@ class CountersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def counter_params
-      params.expect(counter: [ :title, :emoji, :amount, :color, :goal ])
+      params.expect(counter: [ :user_id, :title, :emoji, :amount, :color, :goal ])
     end
 end
