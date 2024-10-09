@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resource :session
+  resource :registration, only: %i[new create]
   resources :passwords, param: :token
+
   resources :counters do
     member do
       patch :increment
