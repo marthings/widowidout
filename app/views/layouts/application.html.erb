@@ -43,15 +43,19 @@
       
       <div class="flex items-center gap-4">
       <% if authenticated? %>
+        <div class="flex gap-2 rounded-full bg-gray-200 p-2 pl-5 items-center">
+          <%= Current.user.email_address %>
+          <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+        </div>
         <%= link_to "Create a counter", new_counter_path, class: "button-solid" %>
-        <%= button_to "Log out", session_path, method: :delete, class: "button-solid" %>
+        
       <% else %>
         
       <% end %>
       </div>
 
     </header>
-    <%= Current.user.email_address %>
+    
     <main class="container mx-auto mt-12 p-5">
       <%= yield %>
     </main>
