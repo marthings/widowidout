@@ -11,16 +11,18 @@
   </h2>
 
   <div class="flex justify-center items-end">
-  <div class="amount font-bold text-8xl" data-scale-target="amount" data-confetti-target="amount">
-    <%= counter.amount %>
-  </div>
-  <div class="invisible" data-confetti-target="goal" data-goal="<%= counter.goal %>"></div>
-  <% if counter.goal.positive? && counter.goal > counter.amount %>
-    <div class="text-lg font-bold">/ <%= counter.goal %></div>
-  <% end %>
+
+    <div class="amount font-bold text-8xl" data-scale-target="amount" data-confetti-target="amount">
+      <%= counter.amount %>
+    </div>
+
+    <div class="invisible" data-confetti-target="goal" data-goal="<%= counter.goal %>"></div>
+    
+    <% if counter.goal.positive? && counter.goal > counter.amount %>
+      <div class="text-lg font-bold">/ <%= counter.goal %></div>
+    <% end %>
 
   </div>
-
 
   <div class="flex gap-4 items-center">
 

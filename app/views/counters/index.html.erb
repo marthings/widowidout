@@ -1,8 +1,8 @@
-  <% content_for :title, "Days with our without" %>
+<% content_for :title, "Dayswithout - My counters" %>
 
-  <div id="counters" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
-    
-    <% @counters.each do |counter| %>
-      <%= render counter %>
-    <% end %>
-  </div>
+<div id="counters" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
+  
+  <% @counters.each do |counter| %>
+    <%= render counter %>
+  <% end %>
+</div>

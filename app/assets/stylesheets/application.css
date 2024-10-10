@@ -10,7 +10,7 @@
  */
 
  .landing-page {
-  background-image: url('bg.png');
+  background: salmon;
   background-size: cover;
  }
 
