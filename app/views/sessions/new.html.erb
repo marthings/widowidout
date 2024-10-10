@@ -4,10 +4,12 @@
 
   <%= form_with url: session_url, class: "contents" do |form| %>
     <div class="my-5">
+      <%= form.label :email_address, class: "form-label" %>
       <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "form-input" %>
     </div>
 
     <div class="my-5">
+      <%= form.label :password, class: "form-label" %>
       <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72, class: "form-input" %>
     </div>
 
@@ -17,12 +19,14 @@
       </div>
 
       <div class="mt-4 text-gray-500 sm:mt-0">
-        <%= link_to "Forgot password?", new_password_path, class: "text-gray-700 underline" %>
+        <%= link_to "No account? Sign up for free", new_registration_path, class: "text-gray-700 underline" %>
+        
       </div>
     </div>
 
     <div class="mt-4 text-gray-500">
-      <%= link_to "No account? Sign up for free", new_registration_path, class: "text-gray-700 underline" %>
+     
+      <%= link_to "Forgot password?", new_password_path, class: "text-gray-700 underline" %>
     </div>
   <% end %>
 </div>

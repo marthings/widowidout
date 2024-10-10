@@ -1,0 +1,30 @@
+<div class="mx-auto md:w-2/3 bg-white max-w-[480px] w-full rounded-xl p-8 border border-gray-300">
+
+  <div class="flex justify-between mb-4">
+    <h1 class="font-bold text-4xl">Edit profile</h1>
+    <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+  </div>
+  <%= form_with model: @user, url: users_path, method: :patch, class: "contents" do |form| %>
+
+    
+    <div class="my-5">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", placeholder: "Enter your full name", class: "form-input" %>
+    </div>
+
+    <div class="my-5">
+      <%= form.label :email_address, class: "form-label" %>
+      <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", class: "form-input" %>
+    </div>
+
+    <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
+      <div class="inline">
+        <%= form.submit "Save changes", class: "button-solid" %>
+      </div>
+      <div class="mt-4 text-sm text-gray-500 sm:mt-0">
+        <%= link_to "Reset password?", new_password_path, class: "text-gray-700 underline" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

@@ -39,19 +39,29 @@
   <body class="body <%= authenticated? ? "page" : "landing-page" %>">
     <%= render "shared/flash" %>
 
-    <header class="flex justify-between items-center mb-2 p-4">
+    <header class="md:flex justify-between items-center mb-2 p-4">
 
       <h1 class="font-bold text-4xl"><%= link_to root_url do %>Widowidout<% end %></h1>
       
       <% if authenticated? %>
 
-        <div class="flex items-center gap-4">
-        
-          <div class="flex gap-2 rounded-full bg-gray-200 p-2 pl-5 items-center">
-            <%= Current.user.email_address %>
-            <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+        <div class="flex items-center gap-2 mt-4 md:mt-0">
+          <div class="rounded-full py-3 px-5 flex items-center gap-2">
+            <% if @total_amount %>
+            <%= heroicon "bolt", class: "w-5 h-5", variant: :solid %>
+            <%= @total_amount %>
+            <% end %>
           </div>
-          <%= link_to "Create a counter", new_counter_path, class: "button-solid" %>
+
+          <div class="button-soft">
+            <%= link_to edit_users_path do %>
+              <%= Current.user.email_address[0, 2].capitalize %>
+            <% end %>
+          </div>
+          <%= link_to new_counter_path, class: "button-solid flex gap-4 items-center" do %>
+              Create
+              <%= heroicon "plus", class: "w-5 h-5" %>
+          <% end %>
         </div>
 
       <% end %>

@@ -3,8 +3,9 @@ class CountersController < ApplicationController
 
   # GET /counters or /counters.json
   def index
-    @user = Current.user
+    @user = User.includes(:counters).find(Current.user.id)
     @counters = @user.counters.all
+    @total_amount = @counters.sum(:amount)
   end
 
   # GET /counters/new

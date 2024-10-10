@@ -24,14 +24,14 @@
         <emoji-picker data-emoji-picker-target="picker"></emoji-picker>
       </div>
       
-      <%= form.text_field :emoji, style: "field-sizing: content", class: "flex text-8xl rounded-md border-0 border-gray-400 outline-none px-3 py-2 mt-2", data: { emoji_picker_target: "input" } %>
+      <%= form.text_field :emoji, style: "field-sizing: content", placeholder: "🏕", class: "flex text-5xl rounded-md border-0 border-gray-400 outline-none px-3 py-2 mt-2", data: { emoji_picker_target: "input" } %>
       <input type="button" role="button" class="button-soft" popovertarget="select-emoji" value="Select emoji">
     </div>
   </div>
 
   <div class="my-5">
     <%= form.label :color, class: "form-label" %>
-    <%= form.color_field :color, class: "p-1 h-10 w-14 block border border-gray-400 cursor-pointer rounded-md disabled:opacity-50 disabled:pointer-events-none" %>
+    <%= form.color_field :color, class: "p-1 h-10 w-14 block cursor-pointer rounded-md disabled:opacity-50 disabled:pointer-events-none" %>
   </div>
 
   <div class="my-5">
