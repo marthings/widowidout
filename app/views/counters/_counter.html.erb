@@ -1,3 +1,5 @@
+<%= turbo_stream_from counter, class: "contents" %>
+
 <div style="--color: <%= counter.color %>" data-controller="scale confetti" id="<%= dom_id counter %>" class="counter-card text-center p-8 relative rounded-xl flex flex-col gap-4 items-stretch justify-center">
   
   <%= link_to edit_counter_path(counter), class:"absolute top-4 right-4" do %>
@@ -26,13 +28,13 @@
 
   <div class="flex gap-4 items-center">
 
-    <%= form_with url: decrement_counter_path(counter), method: :patch, class: "flex gap-4 items-center", html: { class: "contents" } do |form| %>
+    <%= form_with url: decrement_counter_path(counter), data: { turbo_action: "replace" }, method: :patch, class: "flex gap-4 items-center", html: { class: "contents" } do |form| %>
       <%= form.button class: "cursor-pointer counter-decrement-button flex-1 rounded-full py-3 px-5 relative active:top-1 active:scale-95", data: { action: "click->scale#scaleDown" } do %>
         <%= heroicon "minus", class: "text-gray-900 mx-auto", variant: "solid", aria: { label: "Decrease counter" } %>
       <% end %>
     <% end %>
 
-    <%= form_with url: increment_counter_path(counter), method: :patch, class: "flex gap-4 items-center", html: { class: "contents" } do |form| %>
+    <%= form_with url: increment_counter_path(counter), data: { turbo_action: "replace" }, method: :patch, class: "flex gap-4 items-center", html: { class: "contents" } do |form| %>
       <%= form.button class: "cursor-pointer counter-increment-button flex-1 rounded-full py-3 px-5 relative active:-top-1 active:scale-105", data: { action: "click->scale#scaleUp click->confetti#checkConfetti" } do %>
         <%= heroicon "plus", class: "text-gray-100 mx-auto", variant: "solid", aria: { label: "Increase counter" } %>
       <% end %>

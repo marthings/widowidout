@@ -1,8 +1,8 @@
 <% content_for :title, "Dayswithout - My counters" %>
 
+<%= turbo_stream_from @counters %>
+
 <div id="counters" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5">
   
-  <% @counters.each do |counter| %>
-    <%= render counter %>
-  <% end %>
+  <%= render @counters %>
 </div>
