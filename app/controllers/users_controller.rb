@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def edit
+    @user = User.includes(:counters).find(Current.user.id)
+    @total_amount = @user.counters.sum(:amount)
     @user = Current.user
   end
 

@@ -5,7 +5,6 @@ class CountersController < ApplicationController
   def index
     @user = User.includes(:counters).find(Current.user.id)
     @counters = @user.counters.order(created_at: :desc)
-    @total_amount = @counters.sum(:amount)
   end
 
   # GET /counters/new
@@ -18,9 +17,11 @@ class CountersController < ApplicationController
   end
 
   def increment
+
     respond_to do |format|
       if @counter.update(amount: @counter.amount + 1)
         format.html { redirect_to counters_path }
+        format.turbo_stream
       end
     end
   end
@@ -29,6 +30,7 @@ class CountersController < ApplicationController
     respond_to do |format|
       if @counter.update(amount: @counter.amount - 1)
         format.html { redirect_to counters_path }
+        format.turbo_stream
       else
         format.html { redirect_to counters_path, alert: "Cant go minus! Let´s go for a new try!" }
       end

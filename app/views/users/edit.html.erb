@@ -2,6 +2,12 @@
 
 <div class="mx-auto md:w-2/3 bg-white max-w-[480px] w-full rounded-xl p-8 border border-gray-300">
 
+  <% if @total_amount %>
+    <div id="total_amount" class="mb-6">
+      <%= render "counters/total_amount", total_amount: @total_amount %>
+    </div>
+  <% end %>
+  
   <div class="flex justify-between mb-4">
     <h1 class="font-bold text-4xl">Edit profile</h1>
     <%= button_to "Log out", session_path, method: :delete, data: { turbo_action: "replace" }, class: "button-solid py-2 bg-red-700" %>

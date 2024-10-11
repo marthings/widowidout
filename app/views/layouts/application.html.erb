@@ -52,14 +52,6 @@
 
         <div class="flex items-center gap-2 mt-4 md:mt-0">
           
-            <% if @total_amount %>
-              <div class="rounded-full py-3 px-5 flex items-center gap-2">
-                <%= heroicon "bolt", class: "w-5 h-5", variant: :solid %>
-                <%= @total_amount %>
-              </div>
-            <% end %>
-          
-
           <div class="button-soft">
             <%= link_to edit_users_path do %>
               <%= Current.user.email_address[0, 2].capitalize %>
