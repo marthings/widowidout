@@ -5,5 +5,5 @@
 
   <%= render "form", counter: @counter %>
 
-  <%= button_to "Delete", @counter, method: :delete, class: "button-soft mt-4", data: { turbo_confirm: "Are you sure you want to delete?" } %>
+  <%= button_to "Delete", @counter, method: :delete, class: "button-soft mt-4", form_class: "contents", data: { turbo_confirm: "Are you sure you want to delete?" } %>
 </div>

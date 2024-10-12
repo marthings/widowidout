@@ -43,20 +43,21 @@
     <header class="md:flex justify-between items-center p-5">
 
       <% unless turbo_native_app? %>
-      
-        <h1 class="font-bold text-4xl text-center md:text-left mb-6 md:mb-0">
-          <%= link_to root_url, data: { turbo_action: "replace" } do %>Widowidout<% end %>
-        </h1>
+        <% if authenticated? %>
+          <h1 class="font-bold text-4xl text-center md:text-left mb-6 md:mb-0">
+            <%= link_to root_url, data: { turbo_action: "replace" } do %>Widowidout<% end %>
+          </h1>
 
-        <%= render "shared/nav" %>
-
+          <%= render "shared/nav" %>
+        <% end %>
       <% end %>
 
     </header>
     
-    <main class="container mx-auto p-5">
+    <main class="mx-auto p-5">
       <% if !authenticated? %>
-        <h1 class="text-5xl md:text-6xl font-bold text-center mx-auto mb-12 max-w-[480px]">Track milestones that matter</h1>
+        <%= link_to root_url, data: { turbo_action: "replace" }, style:"color: #5C150A", class: "block font-bold text-center text-3xl mx-auto max-w-[480px] mb-2" do %>Tallyo<% end %>
+        <h1 class="text-5xl sm:text-6xl text-balance font-bold text-center mx-auto max-w-[480px] mb-8">Track milestones that matter</h1>
       <% end %>
       <%= yield %>
     </main>
