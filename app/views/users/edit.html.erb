@@ -10,7 +10,7 @@
   
   <div class="flex justify-between mb-4">
     <h1 class="font-bold text-4xl">Edit profile</h1>
-    <%= button_to "Log out", session_path, method: :delete, data: { turbo_action: "replace" }, class: "button-solid py-2 bg-red-700" %>
+    <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
   </div>
 
   <%= form_with model: @user, url: users_path, method: :patch, data: { turbo_action: "replace" }, class: "contents" do |form| %>
