@@ -37,37 +37,24 @@
   </head>
 
   <body class="body <%= authenticated? ? "page" : "landing-page" %>">
+    
     <%= render "shared/flash" %>
 
     <header class="md:flex justify-between items-center mb-2 p-4">
 
       <% unless turbo_native_app? %>
-      <h1 class="font-bold text-4xl text-center md:text-left">
-        <%= link_to root_url, data: { turbo_action: "replace" } do %>Widowidout<% end %>
-      </h1>
-
-      <% end %> 
       
-      <% if authenticated? %>
+        <h1 class="font-bold text-4xl text-center md:text-left">
+          <%= link_to root_url, data: { turbo_action: "replace" } do %>Widowidout<% end %>
+        </h1>
 
-        <div class="flex items-center gap-2 mt-4 md:mt-0">
-          
-          <div class="button-soft">
-            <%= link_to edit_users_path do %>
-              <%= Current.user.email_address[0, 2].capitalize %>
-            <% end %>
-          </div>
-          <%= link_to new_counter_path, class: "button-solid flex gap-4 items-center max-md:w-full max-md:justify-center" do %>
-              Create
-              <%= heroicon "plus", class: "w-5 h-5" %>
-          <% end %>
-        </div>
-
+        <%= render "shared/nav" %>
+        
       <% end %>
 
     </header>
     
-    <main class="container mx-auto mt-12 p-5">
+    <main class="container mx-auto p-5">
       <% if !authenticated? %>
         <h1 class="text-5xl md:text-6xl font-bold text-center mx-auto mb-12 max-w-[480px]">Track milestones that matter</h1>
       <% end %>

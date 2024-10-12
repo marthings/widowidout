@@ -1,0 +1,13 @@
+<% if authenticated? %>
+  <div class="flex items-center gap-2 mt-4 md:mt-0">
+
+    <%= link_to new_counter_path, class: "button-solid flex gap-4 items-center max-md:w-full max-md:justify-center" do %>
+      Create
+      <%= heroicon "plus", class: "w-5 h-5" %>
+    <% end %>
+
+    <%= link_to edit_users_path, class: "button-soft" do %>
+      <%= Current.user.email_address[0, 2].capitalize %>
+    <% end %>
+  </div>
+<% end %>
