@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   after_create :create_example_counter
 
+
   private
 
   def create_example_counter

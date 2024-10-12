@@ -13,26 +13,33 @@
     <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
   </div>
 
-  <%= form_with model: @user, url: users_path, method: :patch, data: { turbo_action: "replace" }, class: "contents" do |form| %>
+  <%= form_with model: @user, url: users_path, method: :patch, class: "contents" do |form| %>
 
-    
     <div class="my-5">
-      <%= form.label :name, class: "form-label" %>
+      <%= form.label :name, "Display name", class: "form-label" %>
       <%= form.text_field :name, required: true, autofocus: true, autocomplete: "name", placeholder: "Enter your full name", class: "form-input" %>
     </div>
 
     <div class="my-5">
-      <%= form.label :email_address, class: "form-label" %>
+      <%= form.label :email_address, "Username", class: "form-label" %>
       <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", class: "form-input" %>
     </div>
+
+    
+
+    <div class="my-5 flex flex-col gap-2">
+      <h3 class="text-lg font-bold">Change password</h3>
+      <%= form.password_field :password, autocomplete: "new-password", placeholder: "Enter new password", maxlength: 72, class: "form-input" %>
+      <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat new password", maxlength: 72, class: "form-input" %>
+      <%= render partial: "shared/form_error", locals: { object: @user, field: :password_confirmation } %>
+    </div>
+
 
     <div class="col-span-6 sm:flex sm:items-center sm:gap-4">
       <div class="inline">
         <%= form.submit "Save changes", class: "button-solid" %>
       </div>
-      <div class="mt-4 text-sm text-gray-500 sm:mt-0">
-        <%= link_to "Reset password?", new_password_path, class: "text-gray-700 underline" %>
-      </div>
+
     </div>
 
   <% end %>
