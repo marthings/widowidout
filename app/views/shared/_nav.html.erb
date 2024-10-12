@@ -1,9 +1,11 @@
 <% if authenticated? %>
   <div class="flex items-center gap-2 mt-4 md:mt-0">
 
-    <%= link_to new_counter_path, class: "button-solid flex gap-4 items-center max-md:w-full max-md:justify-center" do %>
-      Create
-      <%= heroicon "plus", class: "w-5 h-5" %>
+    <%= link_to new_counter_path, class: "button-solid group max-md:w-full max-md:justify-center circle-hover" do %>
+      <div class="flex items-center gap-2 relative z-10 group-hover:text-black">
+      <span class="transition-all duration-500 ease-in-out group-hover:-translate-x-2">Create</span>
+      <%= heroicon "plus", class: "w-5 h-5 group-hover:rotate-90 group-hover:translate-x-2 group-hover:scale-150 transition-all duration-500 ease-in-out" %>
+      </div>
     <% end %>
 
     <%= link_to edit_users_path, class: "button-soft" do %>
