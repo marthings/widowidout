@@ -7,10 +7,14 @@ class User < ApplicationRecord
 
   after_create :create_example_counter
 
+  def reached_goals_count
+    counters.where("amount >= goal AND goal > 0").count
+  end
 
   private
 
   def create_example_counter
     counters.create(title: "Example Counter", amount: 0, goal: 10, color: "#7534DD", emoji: "🎉") # Adjust the attributes as needed
   end
+
 end
