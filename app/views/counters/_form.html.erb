@@ -1,19 +1,9 @@
 <%= form_with(model: counter, class: "contents", data: { turbo_action: "replace" }) do |form| %>
-  <% if counter.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(counter.errors.count, "error") %> prohibited this counter from being saved:</h2>
-
-      <ul>
-        <% counter.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="my-5">
     <%= form.label :title, class: "form-label" %>
     <%= form.text_field :title, class: "form-input", placeholder: "What are you counting?" %>
+    <%= render partial: "shared/form_error", locals: { object: counter, field: :title } %>
   </div>
 
   <div class="my-5">
@@ -28,6 +18,7 @@
         <input type="button" role="button" class="button-soft" popovertarget="select-emoji" value="Select emoji">
       </div>
     </div>
+
   </div>
 
   <div class="my-5">

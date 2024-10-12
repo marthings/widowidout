@@ -1,8 +1,8 @@
 <% content_for :title, "Edit profile" %>
 
-<div class="flex justify-between items-center mb-4">
-  <h1 class="font-bold text-2xl">Edit profile</h1>
-  <%= button_to "Log out", session_path, method: :delete, class: "button-solid py-2 bg-red-700" %>
+<div class="flex items-center mb-4 gap-4">
+  <h1 class="font-bold text-3xl">My profile</h1>
+  <%= button_to "Log out", session_path, method: :delete, class: "text-red-700 underline" %>
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
