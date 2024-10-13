@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Dayswithout" %></title>
+    <title><%= content_for(:title) || "Tallyo" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="view-transition" content="same-origin" />
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -47,7 +47,9 @@
         <% if authenticated? %>
 
           <h1 class="font-bold text-4xl text-center md:text-left mb-6 md:mb-0">
-            <%= link_to root_url, data: { turbo_action: "replace" } do %>Tallyo<% end %>
+            <%= link_to root_url, data: { turbo_action: "replace" } do %>
+              <%= image_tag "logo.svg", class: "inline-block h-auto max-w-[140px]" %>
+            <% end %>
           </h1>
 
           <%= render "shared/nav" %>
@@ -58,7 +60,9 @@
     
     <main class="mx-auto p-5">
       <% if !authenticated? %>
-        <%= link_to root_url, data: { turbo_action: "replace" }, style:"color: #5C150A", class: "block font-bold text-center text-3xl mx-auto max-w-[480px] mb-2" do %>Tallyo<% end %>
+        <%= link_to root_url, data: { turbo_action: "replace" }, style:"color: #5C150A", class: "block font-bold text-center text-3xl mx-auto max-w-[480px] mb-2" do %>
+          <%= image_tag "logo.svg", class: "inline-block h-auto max-w-[100px] mb-5" %>
+        <% end %>
         <h1 class="text-5xl sm:text-6xl text-balance font-bold text-center mx-auto max-w-[480px] mb-8">Track milestones that matter</h1>
       <% end %>
       <%= yield %>

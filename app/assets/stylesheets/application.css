@@ -9,9 +9,8 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
-
 .landing-page {
-  background: salmon;
+  background: #D2DEF9;
   background-size: cover;
 }
 

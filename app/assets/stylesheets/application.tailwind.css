@@ -18,7 +18,7 @@
   }
 
   .button-soft {
-    @apply py-3 px-5 rounded-full bg-gray-200 inline-block font-semibold cursor-pointer
+    @apply py-3 px-5 rounded-full bg-[#D2DEF9] inline-block font-semibold cursor-pointer
   }
 
   .button-link {
@@ -26,15 +26,15 @@
   }
 
   .nav-link {
-    @apply pb-2 border-b-4 border-b-transparent inline-block font-semibold cursor-pointer
+    @apply pb-2 border-b-4 text-lg border-b-transparent inline-block font-semibold cursor-pointer
   }
 
   .nav-link.active {
-    @apply pb-2 border-b-4 border-gray-900 inline-block font-semibold cursor-pointer
+    @apply pb-2 border-b-4 text-lg border-[#255DE0] inline-block font-semibold cursor-pointer
   }
 
   .circle-hover {
-    @apply relative flex h-[50px] w-40 items-center justify-center overflow-hidden transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[salmon] before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56
+    @apply relative flex h-[50px] w-40 items-center justify-center overflow-hidden transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:bg-[#56AF12] before:duration-500 before:ease-out hover:before:h-56 hover:before:w-56
   }
 }
 
