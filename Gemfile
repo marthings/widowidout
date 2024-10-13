@@ -64,3 +64,4 @@ end
 
 gem "tailwindcss-rails", "~> 2.7"
 gem "rails_heroicon"
+gem "active_link_to"

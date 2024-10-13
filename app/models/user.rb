@@ -11,6 +11,14 @@ class User < ApplicationRecord
     counters.where("amount >= goal AND goal > 0").count
   end
 
+  def total_amount
+    counters.sum(:amount)
+  end
+
+  def total_counters
+    counters.count
+  end
+
   private
 
   def create_example_counter

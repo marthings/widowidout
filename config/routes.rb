@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resource :registration, only: %i[new create]
   resources :passwords, param: :token
   resource :users
+  resource :leaderboard
 
   resources :counters do
     member do

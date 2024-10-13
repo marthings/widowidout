@@ -42,7 +42,7 @@
 
     <div class="rounded-2xl bg-green-200 py-3 px-5 grid place-content-center gap-2">
       <%= heroicon "bolt", class: "w-12 h-12 mx-auto text-green-700", variant: :solid %>
-      <%= @total_amount %> Stuff counted!
+      <%= @user.total_amount %> Stuff counted!
     </div>
 
     <div class="rounded-2xl bg-purple-200 py-3 px-5 grid place-content-center gap-2">
@@ -52,7 +52,7 @@
 
     <div class="rounded-2xl bg-blue-200 py-3 px-5 grid place-content-center gap-2">
       <%= heroicon "circle-stack", class: "w-12 h-12 mx-auto text-blue-700", variant: :solid %>
-      <%= @user.counters.count %> Counters created
+      <%= @user.total_counters %> Counters created
     </div>
 
   </div>
