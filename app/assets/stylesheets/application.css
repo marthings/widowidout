@@ -9,11 +9,12 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- .landing-page {
+
+.landing-page {
   background: salmon;
   background-size: cover;
- }
+}
 
- .select-emoji::backdrop {
+.select-emoji::backdrop {
   background-color: rgba(0,0,0,0.6);
 }
