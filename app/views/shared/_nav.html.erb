@@ -21,8 +21,11 @@
         </div>
       <% end %>
 
-      <%= link_to edit_users_path, class: "button-soft" do %>
+      <%= link_to edit_users_path, class: "button-soft flex gap-2 items-center" do %>
+        <span><%= Current.user.avatar %></span>
+        <span>
         <%= avatarize(display_name_or_email(Current.user)) %>
+        </span>
       <% end %>
     </div>
   </div>

@@ -1,12 +1,14 @@
+<% content_for :title, "Edit tally" %>
+
 <h1 class="text-3xl font-semibold mb-6">Leaderboard</h1>
 
 <div class="rounded-xxl overflow-clip">
-  <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-    <thead class="text-xs text-gray-700 uppercase bg-gray-200">
+  <table class="w-full text-sm text-left rtl:text-right">
+    <thead class="text-xs text-gray-800 uppercase bg-gray-200">
       <tr>
         <th class="p-6 text-lg rounded-bl-xl rounded-tl-xl">Tallyoer</th>
-        <th class="p-6 text-lg">Tally +</th>
-        <th class="p-6 text-lg rounded-br-xl rounded-tr-xl">Tallies</th>
+        <th class="p-6 text-lg">Tallies</th>
+        <th class="p-6 text-lg rounded-br-xl rounded-tr-xl">Tally +</th>
       </tr>
     </thead>
     <% @leaders.each do |leader| %>

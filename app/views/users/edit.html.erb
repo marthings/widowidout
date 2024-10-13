@@ -10,6 +10,18 @@
   <div class=" bg-white w-full rounded-xl p-8 border border-gray-300">
 
     <%= form_with model: @user, url: users_path, method: :patch, class: "contents" do |form| %>
+      
+      <%= form.label :avatar, class: "form-label" %>
+      <div class="flex items-center gap-2" data-controller="emoji-picker">
+        
+        <div popover id="select-emoji" class="select-emoji" data-emoji-picker-target="popover">
+          <emoji-picker data-emoji-picker-target="picker"></emoji-picker>
+        </div>
+        <div class="flex items-center gap-2">
+          <%= form.text_field :avatar, placeholder: "😎", class: "form-input border-none text-6xl", data: { emoji_picker_target: "input" } %>
+          <input type="button" role="button" class="button-soft" popovertarget="select-emoji" value="Select avatar">
+        </div>
+      </div>
 
       <div class="mb-5">
         <%= form.label :name, "Display name", class: "form-label" %>
@@ -40,19 +52,19 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-    <div class="rounded-2xl bg-green-200 py-3 px-5 grid place-content-center gap-2">
+    <div class="rounded-2xl bg-green-200 py-3 px-5 grid place-content-center gap-4">
       <%= heroicon "bolt", class: "w-12 h-12 mx-auto text-green-700", variant: :solid %>
-      <%= @user.total_amount %> Stuff counted!
+      <span class="text-2xl"><%= @user.total_amount %> Stuff counted!</span>
     </div>
 
-    <div class="rounded-2xl bg-purple-200 py-3 px-5 grid place-content-center gap-2">
+    <div class="rounded-2xl bg-purple-200 py-3 px-5 grid place-content-center gap-4">
       <%= heroicon "flag", class: "w-12 h-12 mx-auto text-purple-700", variant: :solid %>
-      <%= @user.reached_goals_count %> goals reached
+      <span class="text-2xl"><%= @user.reached_goals_count %> goals reached</span>
     </div>
 
-    <div class="rounded-2xl bg-blue-200 py-3 px-5 grid place-content-center gap-2">
+    <div class="rounded-2xl bg-blue-200 py-3 px-5 grid place-content-center gap-4">
       <%= heroicon "circle-stack", class: "w-12 h-12 mx-auto text-blue-700", variant: :solid %>
-      <%= @user.total_counters %> Counters created
+      <span class="text-2xl"><%= @user.total_counters %> Counters created</span>
     </div>
 
   </div>

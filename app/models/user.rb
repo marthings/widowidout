@@ -22,7 +22,7 @@ class User < ApplicationRecord
   private
 
   def create_example_counter
-    counters.create(title: "Example Counter", amount: 0, goal: 10, color: "#7534DD", emoji: "🎉") # Adjust the attributes as needed
+    counters.create(title: "Example tally", amount: 0, goal: 10, color: "#7534DD", emoji: "🎉") # Adjust the attributes as needed
   end
 
 end
